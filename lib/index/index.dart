@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../config.dart';
 import './banner.dart';
+import './nav.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -76,9 +77,11 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.white
       ),
       body: new SingleChildScrollView(
+        padding: new EdgeInsets.all(16),
         child: new Column(
           children: <Widget>[
-            SwiperView()
+            SwiperView(),
+            NavView()
           ],
         ),
       ),

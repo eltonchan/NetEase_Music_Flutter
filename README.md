@@ -4,4 +4,4 @@ A new Flutter application.
 
 # preview
 
-![avatar](/assets/1.gif)
+![avatar](/assets/1.png)

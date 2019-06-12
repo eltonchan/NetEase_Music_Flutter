@@ -14,24 +14,24 @@ class _SwiperViewState extends State<SwiperView> {
   @override
   void initState() {
     imageList
-    ..add(Image.network(
-      'http://p1.music.126.net/ftH-xPfuregxpeM-Ns-ZXA==/109951164138092434.jpg',
+    ..add(Image.asset(
+      'images/1.jpg',
       fit: BoxFit.fill,
     ))
-    ..add(Image.network(
-      'http://p1.music.126.net/8XCqcLQ4Tgp06D7YUcVY6w==/109951164140076837.jpg',
+    ..add(Image.asset(
+      'images/2.jpg',
       fit: BoxFit.fill,
     ))
-    ..add(Image.network(
-      'http://p1.music.126.net/jqLRnokuYNIeatGmXtxsow==/109951164138668142.jpg',
+    ..add(Image.asset(
+      'images/3.jpg',
       fit: BoxFit.fill,
     ))
-    ..add(Image.network(
-      'http://p1.music.126.net/6KW3ek-RNagXdPh-caxlOQ==/109951164138118639.jpg',
+    ..add(Image.asset(
+      'images/4.jpg',
       fit: BoxFit.fill,
     ))
-    ..add(Image.network(
-      'http://p1.music.126.net/q2B8r5WeRFf8RwdyjrwGKw==/109951164138123358.jpg',
+    ..add(Image.asset(
+      'images/5.jpg',
       fit: BoxFit.fill,
     ));
     super.initState();
@@ -48,8 +48,9 @@ class _SwiperViewState extends State<SwiperView> {
   
   Widget firstSwiperView() {
     return Container(
-      padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+      // padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
       width: MediaQuery.of(context).size.width,
+      margin: EdgeInsets.only(bottom: 18.0),
       height: 180,
       child: ClipRRect(
         borderRadius: BorderRadius.all(Radius.circular(6.0)),
