@@ -38,8 +38,12 @@ class NavView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: navList.map((nav) => item(nav)).toList()
+    return Container(
+      margin: EdgeInsets.only(bottom: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: navList.map((nav) => item(nav)).toList()
+      ),
     );
   }
 }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../config.dart';
 import './banner.dart';
 import './nav.dart';
+import './song-list.dart';
+import '../components/title-bar.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -81,7 +83,10 @@ class _MyHomePageState extends State<MyHomePage> {
         child: new Column(
           children: <Widget>[
             SwiperView(),
-            NavView()
+            NavView(),
+            Divider(),
+            TitleBar('推荐歌单', '歌单广场'),
+            SongLists(),
           ],
         ),
       ),
