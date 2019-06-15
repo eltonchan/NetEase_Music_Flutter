@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/index/bar.dart';
 import '../config.dart';
 import './banner.dart';
 import './nav.dart';
+import './bar.dart';
 import './song-list.dart';
 import '../components/title-bar.dart';
+import '../routes.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -15,6 +18,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.white,
       ),
       home: MyHomePage(title: 'Cloud music'),
+      routes: routes,
     );
   }
 }
@@ -35,6 +39,23 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _selectedIndex = index;
     });
+
+    switch(index) {
+      case 1:
+        Navigator.of(context).pushNamed('/video');
+        break;
+      case 2:
+        Navigator.of(context).pushNamed('/me');
+        break;
+      case 3:
+        Navigator.of(context).pushNamed('/friend');
+        break;
+      case 4:
+        Navigator.of(context).pushNamed('/account');
+      break;
+      default:
+        break;
+    }
   }
 
   @override
@@ -42,40 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: new Row(
-            children: <Widget>[
-              new Container(
-                child: new Icon(Icons.mic_none, size: 22.0,),
-                margin: const EdgeInsets.only(right: 26.0),
-              ),
-              new Expanded(
-                child: new TextField(
-                  autofocus: false,
-                  textAlign: TextAlign.center,
-                  decoration: new InputDecoration(
-                      contentPadding: EdgeInsets.all(10.0),
-                      prefixIcon: new Icon(Icons.search, size: 22.0, color: GlobalConfig.fontColor,),
-                      hintText: "晴天 - 周杰伦",
-                      hintStyle: new TextStyle(color: GlobalConfig.fontColor),
-                      fillColor: Colors.grey[200],
-                      filled: true,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(25.0),
-                        borderSide: BorderSide.none
-                      ),
-                  ),
-                ),
-              ),
-              new Container(
-                child: new FlatButton(
-                  onPressed: (){},
-                  child: new Icon(Icons.menu, size: 22.0),
-                ),
-                width: 40.0,
-                margin: const EdgeInsets.only(left: 16.0),
-              ),
-            ],
-          ),
+        title: new BarView(),
         backgroundColor: Colors.white
       ),
       body: new SingleChildScrollView(
