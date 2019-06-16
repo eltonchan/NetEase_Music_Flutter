@@ -3,13 +3,16 @@ import '../config.dart';
 
 class BarView extends StatelessWidget {
 
+  final IconData icon;
+
+  BarView(this.icon);
 
   @override
   Widget build(BuildContext context) {
     return new Row(
       children: <Widget>[
         new Container(
-          child: new Icon(Icons.mic_none, size: 22.0,),
+          child: new Icon(icon, size: 24.0, color: Colors.black54),
           margin: const EdgeInsets.only(right: 26.0),
         ),
         new Expanded(

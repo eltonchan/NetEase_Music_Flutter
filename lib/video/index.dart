@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import './video.model.dart';
+import '../components/video-item.dart';
+
 
 class VideoView extends StatelessWidget {
-  VideoView({Key key}) : super(key: key);
 
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('video')
+    return new Container(
+      color: Colors.grey[100],
+      child: new Column(
+        children: videoModel.map((Video v) => new VideoItem(v.imgUrl, v.description, v.userAvatarUrl)).toList(),
       ),
     );
   }
